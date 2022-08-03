@@ -1,6 +1,9 @@
 # .gitignore
 
+## 파일
 Keys.swift
 Constant.swift
 
+## 폴더
 Constant/
+
