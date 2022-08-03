@@ -1,3 +1,6 @@
+# .gitignore
 
 Keys.swift
+Constant.swift
 
+Constant/
