@@ -16,12 +16,18 @@ enum MediaType: String, CaseIterable {
     case person
 }
 
+enum TimeWindow: String, CaseIterable {
+    case week
+    case day
+}
+
 struct Items: Codable{
     var page: Int
     var results: [Item]
     var total_results: Int
     var total_pages: Int
 }
+
 
 struct Item: Codable {
     var title: String
@@ -45,7 +51,13 @@ class ViewController: UIViewController {
     }
     
     var media_type: String?
-    var time_window: String?
+    var time_window: String = TimeWindow.week.rawValue {
+        didSet {
+            if time_window == TimeWindow.week.rawValue || time_window == TimeWindow.day.rawValue {
+                getResult()
+            }
+        }
+    }
     var list = [Item]()
     
     @IBOutlet weak var tabBarCollectionView: UICollectionView!
@@ -77,23 +89,15 @@ class ViewController: UIViewController {
         
         sender.isSelected = !sender.isSelected
         
-        timeWindowArray.forEach {
-            $0.isSelected = false
-            sender.backgroundColor = .white
-            sender.layer.borderColor = UIColor.systemGray4.cgColor
+        if sender.isSelected == true {
+            sender.backgroundColor = .systemMint
+        } else {
+            sender.backgroundColor = .systemGray6
         }
-        sender.isSelected = true
-        sender.backgroundColor = .systemMint
-        
             
-        self.time_window = sender.currentTitle
-        print(self.time_window ?? "")
-        
-        
-        
-        
-        
+        self.time_window = sender.currentTitle ?? ""
         // 액션을 취해주어야한다.
+        
         
         
         
@@ -102,7 +106,7 @@ class ViewController: UIViewController {
     func getResult() {
         
         let media_type = "movie"
-        let time_window = "week"
+        let time_window = self.time_window
         
         let url = "\(EndPoint.TMDB_URL)/\(media_type)/\(time_window)"
         
@@ -195,7 +199,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
         
         } else if collectionView == tabPageCollectionView {
             let width: CGFloat = collectionView.frame.size.width - 40
-            let height: CGFloat = 420
+            let height: CGFloat = 400
             
             return CGSize(width: width, height: height)
         } else {

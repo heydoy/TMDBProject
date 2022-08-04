@@ -8,6 +8,7 @@
 import UIKit
 import Kingfisher
 
+
 class TabPageCollectionViewCell: UICollectionViewCell {
     static let identifier = "TabPageCollectionViewCell"
     
@@ -41,10 +42,13 @@ class TabPageCollectionViewCell: UICollectionViewCell {
         
         
         cardView.backgroundColor = .white
-        cardView.clipsToBounds = true
+        cardView.layer.borderColor = UIColor.systemGray5.cgColor
+        cardView.layer.borderWidth = 1
         cardView.layer.cornerRadius = 12
+        cardView.clipsToBounds = true
         cardView.layer.shadowOffset = CGSize(width: 4, height: 4)
         cardView.layer.shadowColor = UIColor.black.cgColor
+        cardView.layer.shadowRadius = 4
         cardView.layer.shadowOpacity = 0.3
     
         
