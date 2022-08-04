@@ -46,17 +46,25 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
     var time_window: String = "" {
         didSet {
             if time_window == TimeWindow.week.rawValue || time_window == TimeWindow.day.rawValue {
+                start = 1
+                totalCount = 0
+                list.removeAll()
                 getResult()
             }
         }
     }
+    
     var list = [Item]()
     var selectedIndex: Int? = nil
     typealias Genre = [Int:String]
-    var genres: [Genre] = []
+    var genres: Genre = [:]
     
     // 로딩 아이콘
     let hud = JGProgressHUD()
+    
+    // 페이지네이션을 위한 변수
+    var start = 1
+    var totalCount = 0
     
     @IBOutlet weak var moviePageCollectionView: UICollectionView!
     
@@ -67,6 +75,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
         
         moviePageCollectionView.delegate = self
         moviePageCollectionView.dataSource = self
+        moviePageCollectionView.prefetchDataSource = self
         
         configure()
         getGenre()
@@ -104,6 +113,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
             }
         }
         
+        
     }
     
     // 영화 API 호출
@@ -117,19 +127,22 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
         let url = "\(EndPoint.TMDB_URL)/\(media_type)/\(time_window)"
         
         let parameter: Parameters = [
-            "api_key": Keys.TMDB
+            "api_key": Keys.TMDB,
+            "page": self.start
         ]
         
         
         AF.request(url, method: .get, parameters: parameter).validate().responseDecodable(of: Items.self) { response in
             switch response.result {
             case .success(let value):
-                self.list = value.results
-                self.hud.dismiss(afterDelay: 0.5)
+                print(value)
+                self.totalCount = value.total_results
+                self.list.append(contentsOf: value.results)
+                self.hud.dismiss(afterDelay: 0.2)
                 self.moviePageCollectionView.reloadData()
                 
             case .failure(let error):
-                self.hud.dismiss(afterDelay: 0.5)
+                self.hud.dismiss(afterDelay: 0.2)
                 print(error)
                 
             }
@@ -156,7 +169,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
                     let id = item["id"].intValue
                     let name = item["name"].stringValue
                     
-                    self.genres.append([id:name])
+                    self.genres.updateValue(name, forKey: id)
 
                 }
                 print(self.genres)
@@ -203,6 +216,19 @@ extension MovieViewController: UICollectionViewDataSource, UICollectionViewDeleg
             let item = list[indexPath.item]
             cell.configure(item)
             
+            var stringGenre: [String] = []
+            
+            for id in item.genre_ids {
+                if genres.keys.contains(id) {
+                    if let genre = genres[id] {
+                        stringGenre.append(genre)
+                    }
+                }
+            }
+            
+            print("장르 ---> \(stringGenre)")
+            
+            cell.configureGenre(genres: stringGenre)
             
             return cell
             
@@ -234,3 +260,18 @@ extension MovieViewController: UICollectionViewDataSource, UICollectionViewDeleg
     
 }
 
+
+extension MovieViewController: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            if list.count - 1 == indexPath.item && list.count < totalCount{
+                
+                start += 1
+                getResult()
+                
+            }
+        }
+    }
+    
+    
+}

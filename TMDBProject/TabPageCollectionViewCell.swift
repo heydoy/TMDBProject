@@ -57,4 +57,13 @@ class TabPageCollectionViewCell: UICollectionViewCell {
         linkButton.layer.cornerRadius = linkButton.frame.width/2
         adultLabel.layer.cornerRadius = adultLabel.frame.width/2
     }
+    
+    func configureGenre( genres: [String]) {
+        var text = ""
+        for i in genres {
+            text = text + " \(i)"
+        }
+        genreLabel.text = text
+        
+    }
 }
