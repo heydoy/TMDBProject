@@ -28,6 +28,7 @@ struct Item: Codable {
     var poster_path: String
     var release_date: String
     var genre_ids: [Int]
+    var backdrop_path: String
 }
 
 // VC 클래스
@@ -254,7 +255,12 @@ extension MovieViewController: UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == moviePageCollectionView {
             // 선택하면 다음으로
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: MovieDetailViewController.identifier) as! MovieDetailViewController
             
+            vc.movie = list[indexPath.item]
+            
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     

@@ -6,25 +6,72 @@
 //
 
 import UIKit
+import Kingfisher
 
-class MovieDetailViewController: UIViewController {
+class MovieDetailViewController: UIViewController{
+
+    
     static let identifier = "MovieDetailViewController"
+    
+    var movie: Item?
+    
+    
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    
+    @IBOutlet weak var posterImageView: UIImageView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        configure()
+
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func configure() {
+        if let movie = self.movie {
+            titleLabel.text = movie.title
+            
+            let imgURL = "https://image.tmdb.org/t/p/w220_and_h330_face"
+            let url = URL(string: (imgURL + movie.poster_path))
+            let backUrl = URL(string: (imgURL + movie.backdrop_path))
+            posterImageView.kf.setImage(with: url)
+            posterImageView.contentMode = .scaleAspectFill
+            backgroundImageView.kf.setImage(with: backUrl)
+            backgroundImageView.contentMode = .scaleAspectFill
+            
+            
+        }
     }
-    */
 
+
+
+}
+
+extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        2
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if section == 1 {
+            return 1
+        }
+        else if section == 2 {
+            return 4 // 배우수만큼
+        }
+        else { return 0}
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
 }
