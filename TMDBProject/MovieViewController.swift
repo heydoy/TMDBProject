@@ -21,6 +21,7 @@ struct Items: Codable{
 
 
 struct Item: Codable {
+    var id: Int
     var title: String
     var adult: Bool
     var overview: String

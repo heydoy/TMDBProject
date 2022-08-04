@@ -454,17 +454,17 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OSV-z4-82L">
-                                                    <rect key="frame" x="120" y="30" width="46" height="50.5"/>
+                                                    <rect key="frame" x="120" y="33" width="39.5" height="44.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IY7-tf-aaU">
-                                                            <rect key="frame" x="0.0" y="0.0" width="46" height="23"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="39.5" height="19.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHU-eC-u3o">
-                                                            <rect key="frame" x="0.0" y="31" width="46" height="19.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <rect key="frame" x="0.0" y="27.5" width="39.5" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" systemColor="systemGrayColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -480,6 +480,11 @@
                                                 <constraint firstItem="ApQ-76-cvK" firstAttribute="leading" secondItem="Fgn-5e-a57" secondAttribute="leading" constant="20" symbolic="YES" id="fnf-LI-bwT"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="characterLable" destination="MHU-eC-u3o" id="PmX-gY-ZcC"/>
+                                            <outlet property="nameLabel" destination="IY7-tf-aaU" id="HYd-VF-gXu"/>
+                                            <outlet property="profileImageView" destination="ApQ-76-cvK" id="sqf-dX-4xF"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

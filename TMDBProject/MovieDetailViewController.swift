@@ -6,15 +6,29 @@
 //
 
 import UIKit
+import Alamofire
 import Kingfisher
+import JGProgressHUD
 
+struct Cast: Codable {
+    var name: String
+    var character: String
+    var profile_path: String?
+}
+
+struct Casts: Codable {
+    var id: Int
+    var cast: [Cast]
+}
 class MovieDetailViewController: UIViewController{
 
-    
+    // MARK: - Properties
     static let identifier = "MovieDetailViewController"
     
     var movie: Item?
+    var list: [Cast] = []
     
+    let hud = JGProgressHUD()
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     
@@ -24,7 +38,7 @@ class MovieDetailViewController: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
     
-    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,16 +46,53 @@ class MovieDetailViewController: UIViewController{
         tableView.dataSource = self
         
         configure()
+        requestCast()
 
     }
     
+    // MARK: - Actions
+    
+    func requestCast() {
+        
+        guard let movie_id = movie?.id else {
+            print("id가 없습니다.")
+            return
+        }
+        
+        hud.show(in: self.view)
+        let url = "https://api.themoviedb.org/3/movie/\(movie_id)/credits"
+        
+        let parameter: Parameters = [
+            "api_key" : Keys.TMDB
+        ]
+        
+        AF.request(url, method: .get, parameters: parameter).validate().responseDecodable(of: Casts.self) { response in
+            switch response.result {
+            case .success(let value) :
+                print(value)
+                self.list.append(contentsOf: value.cast)
+                print(self.list)
+                self.hud.dismiss(animated: true)
+                self.tableView.reloadData()
+                
+                
+            case .failure(let error) :
+                self.hud.dismiss(animated: true)
+                print(error)
+            }
+        }
+        
+    }
+    
+    // MARK: - Helpers
+    
     func configure() {
-        if let movie = self.movie {
-            titleLabel.text = movie.title
+        if let item = self.movie {
+            titleLabel.text = item.title
             
             let imgURL = "https://image.tmdb.org/t/p/w220_and_h330_face"
-            let url = URL(string: (imgURL + movie.poster_path))
-            let backUrl = URL(string: (imgURL + movie.backdrop_path))
+            let url = URL(string: (imgURL + item.poster_path))
+            let backUrl = URL(string: (imgURL + item.backdrop_path))
             posterImageView.kf.setImage(with: url)
             posterImageView.contentMode = .scaleAspectFill
             backgroundImageView.kf.setImage(with: backUrl)
@@ -74,7 +125,7 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
             return 1
         }
         else if section == 1 {
-            return 4 // 배우수만큼
+            return list.count // 배우수만큼
         }
         else { return 0}
     }
@@ -93,6 +144,8 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
         } else if indexPath.section == 1 {
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieCastTableViewCell.identifier, for: indexPath) as? MovieCastTableViewCell else { return UITableViewCell() }
+            
+            cell.configure(list[indexPath.row])
             return cell
         }
         return UITableViewCell()
