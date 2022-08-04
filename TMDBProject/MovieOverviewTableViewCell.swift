@@ -10,6 +10,9 @@ import UIKit
 class MovieOverviewTableViewCell: UITableViewCell {
     static let identifier = "MovieOverviewTableViewCell"
     
+    
+    @IBOutlet weak var overviewLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +22,10 @@ class MovieOverviewTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configure(_ overview: String) {
+        overviewLabel.text = overview
     }
 
 }

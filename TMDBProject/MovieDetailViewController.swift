@@ -62,16 +62,41 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if section == 1 {
+        if section == 0 {
             return 1
         }
-        else if section == 2 {
+        else if section == 1 {
             return 4 // 배우수만큼
         }
         else { return 0}
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.section == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieOverviewTableViewCell.identifier, for: indexPath) as? MovieOverviewTableViewCell else { return UITableViewCell() }
+            
+            if let item = self.movie {
+                cell.configure(item.overview)
+                print(item)
+            }
+            
+            return cell
+        } else if indexPath.section == 1 {
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieCastTableViewCell.identifier, for: indexPath) as? MovieCastTableViewCell else { return UITableViewCell() }
+            return cell
+        }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return CGFloat(115)
+        } else if indexPath.section == 1 {
+            return CGFloat(110)
+        } else {
+            return CGFloat(0)
+        }
     }
 }
