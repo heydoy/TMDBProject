@@ -94,7 +94,7 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
         if indexPath.section == 0 {
             return CGFloat(115)
         } else if indexPath.section == 1 {
-            return CGFloat(110)
+            return CGFloat(90)
         } else {
             return CGFloat(0)
         }
