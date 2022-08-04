@@ -1,0 +1,59 @@
+{
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire",
+      "state" : {
+        "revision" : "8dd85aee02e39dd280c75eef88ffdb86eed4b07b",
+        "version" : "5.6.2"
+      }
+    },
+    {
+      "identity" : "jgprogresshud",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/JonasGessner/JGProgressHUD",
+      "state" : {
+        "revision" : "78d7cd35f1d90ff74fd82e486f2cbe4b24be8cf9",
+        "version" : "2.2.0"
+      }
+    },
+    {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/Kingfisher",
+      "state" : {
+        "revision" : "2231f92b5af71c78ad2c1450e583bf4a8713b951",
+        "version" : "7.3.1"
+      }
+    },
+    {
+      "identity" : "pageboy",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/uias/Pageboy",
+      "state" : {
+        "revision" : "34ecb6e7c4e0e07494960ab2f7cc9a02293915a6",
+        "version" : "3.6.2"
+      }
+    },
+    {
+      "identity" : "swiftyjson",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftyJSON/SwiftyJSON",
+      "state" : {
+        "revision" : "b3dcd7dbd0d488e1a7077cb33b00f2083e382f07",
+        "version" : "5.0.1"
+      }
+    },
+    {
+      "identity" : "tabman",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/uias/Tabman",
+      "state" : {
+        "revision" : "a9f10cb862a32e6a22549836af013abd6b0692d3",
+        "version" : "2.12.0"
+      }
+    }
+  ],
+  "version" : 2
+}
