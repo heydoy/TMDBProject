@@ -8,9 +8,10 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import JGProgressHUD
 
 
-
+// 데이터 구조체
 struct Items: Codable{
     var page: Int
     var results: [Item]
@@ -29,6 +30,7 @@ struct Item: Codable {
     var genre_ids: [Int]
 }
 
+// VC 클래스
 class MovieViewController: UIViewController, UICollectionViewDelegate {
     // MARK: - Properties
     static let identifier = "MovieViewController"
@@ -50,6 +52,8 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
     }
     var list = [Item]()
     var selectedIndex: Int? = nil
+    typealias Genre = [Int:String]
+    var genres: [Genre] = []
     
     // 로딩 아이콘
     let hud = JGProgressHUD()
@@ -65,6 +69,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
         moviePageCollectionView.dataSource = self
         
         configure()
+        getGenre()
         
         
     }
@@ -101,6 +106,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
         
     }
     
+    // 영화 API 호출
     func getResult() {
         
         hud.show(in: self.view)
@@ -119,17 +125,47 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
             switch response.result {
             case .success(let value):
                 self.list = value.results
-                hud.dismiss(afterDelay: 0.5)
+                self.hud.dismiss(afterDelay: 0.5)
                 self.moviePageCollectionView.reloadData()
                 
             case .failure(let error):
-                hud.dismiss(afterDelay: 0.5)
+                self.hud.dismiss(afterDelay: 0.5)
                 print(error)
                 
             }
         }
         
         
+    }
+    
+    // 장르 API 호출
+    func getGenre() {
+        let url = "https://api.themoviedb.org/3/genre/movie/list"
+        let parameter: Parameters = [
+            "api_key" : Keys.TMDB,
+            "language": "en-US"
+        ]
+        
+        AF.request(url, method: .get, parameters: parameter).validate().responseData() { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+                
+                for item in json["genres"].arrayValue {
+                    let id = item["id"].intValue
+                    let name = item["name"].stringValue
+                    
+                    self.genres.append([id:name])
+
+                }
+                print(self.genres)
+                
+            case .failure(let error):
+                print(error)
+                
+            }
+        }
     }
     
     // MARK: - Helpers
@@ -164,7 +200,6 @@ extension MovieViewController: UICollectionViewDataSource, UICollectionViewDeleg
         
         if collectionView == moviePageCollectionView{
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TabPageCollectionViewCell.identifier, for: indexPath) as? TabPageCollectionViewCell else { return UICollectionViewCell() }
-            print("아이템 셀")
             let item = list[indexPath.item]
             cell.configure(item)
             
@@ -180,7 +215,7 @@ extension MovieViewController: UICollectionViewDataSource, UICollectionViewDeleg
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
          if collectionView == moviePageCollectionView {
-            let width: CGFloat = collectionView.frame.size.width - 40
+            let width: CGFloat = UIScreen.main.bounds.width - 40
             let height: CGFloat = 400
             
             return CGSize(width: width, height: height)
