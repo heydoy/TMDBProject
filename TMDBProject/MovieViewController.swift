@@ -39,7 +39,7 @@ struct Item: Codable {
     var genre_ids: [Int]
 }
 
-class ViewController: UIViewController {
+class MovieViewController: UIViewController {
     // MARK: - Properties
     static let identifier = "ViewController"
     
@@ -60,7 +60,6 @@ class ViewController: UIViewController {
     }
     var list = [Item]()
     
-    @IBOutlet weak var tabBarCollectionView: UICollectionView!
     
     @IBOutlet weak var tabPageCollectionView: UICollectionView!
     
@@ -68,9 +67,6 @@ class ViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tabBarCollectionView.delegate = self
-        tabBarCollectionView.dataSource = self
         
         tabPageCollectionView.delegate = self
         tabPageCollectionView.dataSource = self
@@ -83,6 +79,8 @@ class ViewController: UIViewController {
     
     // MARK: - Actions
     
+    
+    // 타임윈도우 버튼 클릭하면 해당 태그에 맞춰서 API 요청하고 화면을 새로운 데이터에 맞춰 갱신
     @IBAction func didTimeWindowButtonTapped(_ sender: UIButton) {
         
         // 하이라이트된 버튼 색상을 변경하기
@@ -167,14 +165,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     // 셀 종류
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if collectionView == tabBarCollectionView {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TabBarCollectionViewCell.identifier, for: indexPath) as? TabBarCollectionViewCell else { return UICollectionViewCell() }
-            
-            cell.configure(indexPath.item)
-            
-            return cell
-            
-        } else if collectionView == tabPageCollectionView{
+        if collectionView == tabPageCollectionView{
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TabPageCollectionViewCell.identifier, for: indexPath) as? TabPageCollectionViewCell else { return UICollectionViewCell() }
             print("아이템 셀")
             let item = list[indexPath.item]
@@ -191,19 +182,21 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     // 셀 크기
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView == tabBarCollectionView {
-            
-            let width: CGFloat = collectionView.frame.size.width/4
-            let height: CGFloat = 48
-            return CGSize(width: width, height: height)
-        
-        } else if collectionView == tabPageCollectionView {
+         if collectionView == tabPageCollectionView {
             let width: CGFloat = collectionView.frame.size.width - 40
             let height: CGFloat = 400
             
             return CGSize(width: width, height: height)
         } else {
             return CGSize(width: 0, height: 0)
+        }
+    }
+    
+    // 셀 눌렸을때
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == tabPageCollectionView {
+            // 선택하면 다음으로
+            
         }
     }
     
