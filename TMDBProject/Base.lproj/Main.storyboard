@@ -117,7 +117,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uE8-X4-OPi">
                                                     <rect key="frame" x="0.0" y="91" width="366" height="329"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jk0-YC-Je7">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jk0-YC-Je7">
                                                             <rect key="frame" x="0.0" y="0.0" width="366" height="214.5"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Country For Old Men" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Qr-Rh-uno">
@@ -290,8 +290,10 @@
                                         <connections>
                                             <outlet property="actorsLabel" destination="LZT-4R-vhK" id="TCD-fp-crf"/>
                                             <outlet property="adultLabel" destination="3tt-bD-XW1" id="r3h-Yh-QMD"/>
+                                            <outlet property="cardView" destination="uE8-X4-OPi" id="9hA-vH-NsF"/>
                                             <outlet property="genreLabel" destination="dVJ-Gh-aT8" id="Plk-Vm-esV"/>
                                             <outlet property="linkButton" destination="PSb-gc-hZn" id="EXb-JE-xkU"/>
+                                            <outlet property="posterImageView" destination="jk0-YC-Je7" id="Yi7-yc-d0e"/>
                                             <outlet property="rateLabel" destination="HV0-Rj-H1R" id="vQv-bp-x8U"/>
                                             <outlet property="releaseDateLabel" destination="bu5-zC-jzj" id="o5M-aw-vQE"/>
                                             <outlet property="titleLabel" destination="7Qr-Rh-uno" id="Nsb-Pm-cmK"/>

@@ -30,6 +30,7 @@ struct Item: Codable {
     var vote_average: Double
     var poster_path: String
     var release_date: String
+    var genre_ids: [Int]
 }
 
 class ViewController: UIViewController {
@@ -115,7 +116,13 @@ class ViewController: UIViewController {
             case .success(let value):
                 self.list = value.results
                 print(self.list[0].title)
+                
+                // 이미지 URL 처리
+                
+                
+                
                 self.tabPageCollectionView.reloadData()
+                
             case .failure(let error):
                 print(error)
             }
