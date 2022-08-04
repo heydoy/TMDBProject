@@ -9,17 +9,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-enum MediaType: String, CaseIterable {
-    case all
-    case movie
-    case tv
-    case person
-}
 
-enum TimeWindow: String, CaseIterable {
-    case week
-    case day
-}
 
 struct Items: Codable{
     var page: Int
@@ -51,7 +41,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
     }
     
     var media_type: String?
-    var time_window: String = TimeWindow.week.rawValue {
+    var time_window: String = "" {
         didSet {
             if time_window == TimeWindow.week.rawValue || time_window == TimeWindow.day.rawValue {
                 getResult()
@@ -59,7 +49,10 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
         }
     }
     var list = [Item]()
+    var selectedIndex: Int? = nil
     
+    // 로딩 아이콘
+    let hud = JGProgressHUD()
     
     @IBOutlet weak var moviePageCollectionView: UICollectionView!
     
@@ -73,7 +66,6 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
         
         configure()
         
-        getResult()
         
     }
     
@@ -84,24 +76,34 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
     @IBAction func didTimeWindowButtonTapped(_ sender: UIButton) {
         
         // 하이라이트된 버튼 색상을 변경하기
-        
-        sender.isSelected = !sender.isSelected
+        if selectedIndex != nil {
+            if !sender.isSelected {
+                timeWindowArray.forEach {
+                    $0.isSelected = false
+                }
+                sender.isSelected = true
+                selectedIndex = timeWindowArray.firstIndex(of: sender)
+                
+            } else {
+                sender.isSelected = false
+                selectedIndex = nil
+            }
+        } else {
+            sender.isSelected = true
+            selectedIndex = timeWindowArray.firstIndex(of: sender)
+        }
         
         if sender.isSelected == true {
-            sender.backgroundColor = .systemMint
-        } else {
-            sender.backgroundColor = .systemGray6
+            if let text = sender.currentTitle {
+                self.time_window = text
+            }
         }
-            
-        self.time_window = sender.currentTitle ?? ""
-        // 액션을 취해주어야한다.
-        
-        
-        
         
     }
     
     func getResult() {
+        
+        hud.show(in: self.view)
         
         let media_type = "movie"
         let time_window = self.time_window
@@ -117,16 +119,13 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
             switch response.result {
             case .success(let value):
                 self.list = value.results
-                print(self.list[0].title)
-                
-                // 이미지 URL 처리
-                
-                
-                
+                hud.dismiss(afterDelay: 0.5)
                 self.moviePageCollectionView.reloadData()
                 
             case .failure(let error):
+                hud.dismiss(afterDelay: 0.5)
                 print(error)
+                
             }
         }
         

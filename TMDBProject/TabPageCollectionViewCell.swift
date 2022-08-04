@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import JGProgressHUD
 
 
 class TabPageCollectionViewCell: UICollectionViewCell {
@@ -25,6 +26,7 @@ class TabPageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var cardView: UIView!
     
+   
     
     func configure(_ item: Item) {
         titleLabel.text = item.title
@@ -32,25 +34,28 @@ class TabPageCollectionViewCell: UICollectionViewCell {
         adultLabel.isHidden = item.adult ? false : true
         rateLabel.text = String(item.vote_average)
         
+        
+        
         let imgURL = "https://image.tmdb.org/t/p/w220_and_h330_face"
-        
-        
-        
+
         let url = URL(string: (imgURL+item.poster_path))
         
         posterImageView.kf.setImage(with: url)
         
-        
+        // 디자인
         cardView.backgroundColor = .white
         cardView.layer.borderColor = UIColor.systemGray5.cgColor
         cardView.layer.borderWidth = 1
         cardView.layer.cornerRadius = 12
-        cardView.clipsToBounds = true
-        cardView.layer.shadowOffset = CGSize(width: 4, height: 4)
+        cardView.layer.shadowOffset = CGSize(width: 0, height: 0)
         cardView.layer.shadowColor = UIColor.black.cgColor
         cardView.layer.shadowRadius = 4
-        cardView.layer.shadowOpacity = 0.3
+        cardView.layer.shadowOpacity = 0.18
     
+        posterImageView.layer.cornerRadius = 12
+        posterImageView.clipsToBounds = true
         
+        linkButton.layer.cornerRadius = linkButton.frame.width/2
+        adultLabel.layer.cornerRadius = adultLabel.frame.width/2
     }
 }

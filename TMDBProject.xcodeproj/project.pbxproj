@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A235312C289BC1130067F2F2 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = A235312B289BC1130067F2F2 /* Tabman */; };
+		A235312E289BC4460067F2F2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A235312D289BC4460067F2F2 /* MainViewController.swift */; };
 		A2D34886289AC9D200677714 /* TabPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D34885289AC9D200677714 /* TabPageCollectionViewCell.swift */; };
 		A2D34889289AD5D500677714 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = A2D34888289AD5D500677714 /* SwiftyJSON */; };
 		A2D3488C289AD7B400677714 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A2D3488B289AD7B400677714 /* Alamofire */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A235312D289BC4460067F2F2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A2D34885289AC9D200677714 /* TabPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A2E6E1A62899F6C800844770 /* TMDBProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDBProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2E6E1A92899F6C800844770 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				A2E6E1CB2899FAD900844770 /* Constant */,
 				A2E6E1AD2899F6C800844770 /* MovieViewController.swift */,
 				A2E6E1AF2899F6C800844770 /* Main.storyboard */,
+				A235312D289BC4460067F2F2 /* MainViewController.swift */,
 				A2D34885289AC9D200677714 /* TabPageCollectionViewCell.swift */,
 				A2E6E1B22899F6C900844770 /* Assets.xcassets */,
 				A2E6E1B42899F6C900844770 /* LaunchScreen.storyboard */,
@@ -191,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A235312E289BC4460067F2F2 /* MainViewController.swift in Sources */,
 				A2E6E1CA2899F9CE00844770 /* Constants.swift in Sources */,
 				A2E6E1AE2899F6C800844770 /* MovieViewController.swift in Sources */,
 				A2E6E1C42899F88B00844770 /* Keys.swift in Sources */,
