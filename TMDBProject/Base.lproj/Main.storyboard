@@ -286,6 +286,7 @@
                                                 <constraint firstItem="uE8-X4-OPi" firstAttribute="leading" secondItem="6ip-KS-BuF" secondAttribute="leading" id="sYC-Xb-IBS"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="366" height="420"/>
                                         <connections>
                                             <outlet property="actorsLabel" destination="LZT-4R-vhK" id="TCD-fp-crf"/>
                                             <outlet property="adultLabel" destination="3tt-bD-XW1" id="r3h-Yh-QMD"/>
@@ -322,8 +323,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="dayButton" destination="rLU-IC-74y" id="Y4c-kE-d51"/>
-                        <outlet property="tabBarCollectionView" destination="3dC-wb-Scd" id="PcB-0X-m9Z"/>
-                        <outlet property="tabPageCollectionView" destination="ktb-9W-a7F" id="qB2-BU-DE2"/>
+                        <outlet property="tabBarCollectionView" destination="3dC-wb-Scd" id="Utr-JA-yPm"/>
+                        <outlet property="tabPageCollectionView" destination="ktb-9W-a7F" id="VJR-vs-KTT"/>
                         <outlet property="weekButton" destination="lP4-sO-1pP" id="72s-Gg-yfR"/>
                     </connections>
                 </viewController>

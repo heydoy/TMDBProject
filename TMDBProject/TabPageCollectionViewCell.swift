@@ -22,6 +22,7 @@ class TabPageCollectionViewCell: UICollectionViewCell {
     
     func configure(_ item: Item) {
         titleLabel.text = item.title
+        print(item)
         
     }
 }
