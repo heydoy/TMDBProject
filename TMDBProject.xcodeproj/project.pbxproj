@@ -14,6 +14,7 @@
 		A2D3488C289AD7B400677714 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A2D3488B289AD7B400677714 /* Alamofire */; };
 		A2D3488F289B4BC000677714 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A2D3488E289B4BC000677714 /* Kingfisher */; };
 		A2D34895289B506800677714 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = A2D34894289B506800677714 /* JGProgressHUD */; };
+		A2DED6C1289C2D6B003BBC83 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DED6C0289C2D6B003BBC83 /* MovieDetailViewController.swift */; };
 		A2E6E1AA2899F6C800844770 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E6E1A92899F6C800844770 /* AppDelegate.swift */; };
 		A2E6E1AC2899F6C800844770 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E6E1AB2899F6C800844770 /* SceneDelegate.swift */; };
 		A2E6E1AE2899F6C800844770 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E6E1AD2899F6C800844770 /* MovieViewController.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		A235312D289BC4460067F2F2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A2D34885289AC9D200677714 /* TabPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPageCollectionViewCell.swift; sourceTree = "<group>"; };
+		A2DED6C0289C2D6B003BBC83 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		A2E6E1A62899F6C800844770 /* TMDBProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDBProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2E6E1A92899F6C800844770 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2E6E1AB2899F6C800844770 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				A2E6E1CB2899FAD900844770 /* Constant */,
 				A2E6E1AD2899F6C800844770 /* MovieViewController.swift */,
 				A2E6E1AF2899F6C800844770 /* Main.storyboard */,
+				A2DED6C0289C2D6B003BBC83 /* MovieDetailViewController.swift */,
 				A235312D289BC4460067F2F2 /* MainViewController.swift */,
 				A2D34885289AC9D200677714 /* TabPageCollectionViewCell.swift */,
 				A2E6E1B22899F6C900844770 /* Assets.xcassets */,
@@ -198,6 +201,7 @@
 				A2E6E1CA2899F9CE00844770 /* Constants.swift in Sources */,
 				A2E6E1AE2899F6C800844770 /* MovieViewController.swift in Sources */,
 				A2E6E1C42899F88B00844770 /* Keys.swift in Sources */,
+				A2DED6C1289C2D6B003BBC83 /* MovieDetailViewController.swift in Sources */,
 				A2D34886289AC9D200677714 /* TabPageCollectionViewCell.swift in Sources */,
 				A2E6E1AA2899F6C800844770 /* AppDelegate.swift in Sources */,
 				A2E6E1AC2899F6C800844770 /* SceneDelegate.swift in Sources */,
