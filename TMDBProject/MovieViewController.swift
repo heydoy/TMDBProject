@@ -39,9 +39,9 @@ struct Item: Codable {
     var genre_ids: [Int]
 }
 
-class MovieViewController: UIViewController {
+class MovieViewController: UIViewController, UICollectionViewDelegate {
     // MARK: - Properties
-    static let identifier = "ViewController"
+    static let identifier = "MovieViewController"
     
     @IBOutlet weak var weekButton: UIButton!
     @IBOutlet weak var dayButton: UIButton!
@@ -61,15 +61,15 @@ class MovieViewController: UIViewController {
     var list = [Item]()
     
     
-    @IBOutlet weak var tabPageCollectionView: UICollectionView!
+    @IBOutlet weak var moviePageCollectionView: UICollectionView!
     
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tabPageCollectionView.delegate = self
-        tabPageCollectionView.dataSource = self
+        moviePageCollectionView.delegate = self
+        moviePageCollectionView.dataSource = self
         
         configure()
         
@@ -123,7 +123,7 @@ class MovieViewController: UIViewController {
                 
                 
                 
-                self.tabPageCollectionView.reloadData()
+                self.moviePageCollectionView.reloadData()
                 
             case .failure(let error):
                 print(error)
@@ -149,13 +149,11 @@ class MovieViewController: UIViewController {
 
 }
 
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension MovieViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     // 셀 갯수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == tabBarCollectionView {
-            return MediaType.allCases.count
-        } else if collectionView == tabPageCollectionView {
+        if collectionView == moviePageCollectionView {
             return list.count
         } else {
             return 0
@@ -165,7 +163,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     // 셀 종류
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if collectionView == tabPageCollectionView{
+        if collectionView == moviePageCollectionView{
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TabPageCollectionViewCell.identifier, for: indexPath) as? TabPageCollectionViewCell else { return UICollectionViewCell() }
             print("아이템 셀")
             let item = list[indexPath.item]
@@ -182,7 +180,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     // 셀 크기
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-         if collectionView == tabPageCollectionView {
+         if collectionView == moviePageCollectionView {
             let width: CGFloat = collectionView.frame.size.width - 40
             let height: CGFloat = 400
             
@@ -194,7 +192,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     
     // 셀 눌렸을때
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView == tabPageCollectionView {
+        if collectionView == moviePageCollectionView {
             // 선택하면 다음으로
             
         }
