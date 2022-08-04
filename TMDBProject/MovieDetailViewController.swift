@@ -56,6 +56,14 @@ class MovieDetailViewController: UIViewController{
 }
 
 extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Overview"
+        } else if section == 1 {
+            return "Cast"
+        } else { return "" }
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         2
     }

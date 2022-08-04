@@ -402,37 +402,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fNs-Mp-juQ">
                                 <rect key="frame" x="0.0" y="244" width="414" height="618"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="N4u-9l-ZLN" customClass="MovieDetailHeaderView" customModule="TMDBProject" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKq-9I-lt0">
-                                            <rect key="frame" x="18" y="12" width="71.5" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" systemColor="systemGrayColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x19-pW-mrx">
-                                            <rect key="frame" x="18" y="41" width="376" height="1"/>
-                                            <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="1" id="hkW-xj-CkD"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <constraints>
-                                        <constraint firstItem="AKq-9I-lt0" firstAttribute="leading" secondItem="N4u-9l-ZLN" secondAttribute="leading" constant="18" id="1nn-tu-VHS"/>
-                                        <constraint firstAttribute="trailing" secondItem="x19-pW-mrx" secondAttribute="trailing" constant="20" id="WCx-9V-NU3"/>
-                                        <constraint firstAttribute="bottom" secondItem="x19-pW-mrx" secondAttribute="bottom" constant="2" id="Xw4-ly-ri0"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="AKq-9I-lt0" secondAttribute="trailing" constant="20" symbolic="YES" id="aTq-0w-beB"/>
-                                        <constraint firstItem="AKq-9I-lt0" firstAttribute="centerY" secondItem="N4u-9l-ZLN" secondAttribute="centerY" id="xsV-S9-Fhn"/>
-                                        <constraint firstItem="x19-pW-mrx" firstAttribute="leading" secondItem="AKq-9I-lt0" secondAttribute="leading" id="zOa-yD-7JC"/>
-                                    </constraints>
-                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieOverviewTableViewCell" rowHeight="115" id="BjL-MT-t1q" customClass="MovieOverviewTableViewCell" customModule="TMDBProject" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="88.5" width="414" height="115"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BjL-MT-t1q" id="3J3-iU-JrZ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
@@ -469,7 +441,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCastTableViewCell" rowHeight="110" id="gRJ-aw-ix3" customClass="MovieCastTableViewCell" customModule="TMDBProject" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="203.5" width="414" height="110"/>
+                                        <rect key="frame" x="0.0" y="159.5" width="414" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gRJ-aw-ix3" id="Fgn-5e-a57">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
@@ -484,13 +456,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OSV-z4-82L">
                                                     <rect key="frame" x="120" y="30" width="46" height="50.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IY7-tf-aaU">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IY7-tf-aaU">
                                                             <rect key="frame" x="0.0" y="0.0" width="46" height="23"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHU-eC-u3o">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHU-eC-u3o">
                                                             <rect key="frame" x="0.0" y="31" width="46" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" systemColor="systemGrayColor"/>
@@ -569,9 +541,6 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
