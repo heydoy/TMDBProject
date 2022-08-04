@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ww8-bh-3fg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -254,9 +254,9 @@
                                                 <constraint firstItem="bu5-zC-jzj" firstAttribute="top" secondItem="6ip-KS-BuF" secondAttribute="top" id="7Ty-Ul-Ltj"/>
                                                 <constraint firstAttribute="trailing" secondItem="uE8-X4-OPi" secondAttribute="trailing" constant="20" id="7vl-6b-xKz"/>
                                                 <constraint firstItem="bu5-zC-jzj" firstAttribute="leading" secondItem="6ip-KS-BuF" secondAttribute="leading" constant="20" id="Enu-C1-UOq"/>
+                                                <constraint firstItem="uE8-X4-OPi" firstAttribute="leading" secondItem="6ip-KS-BuF" secondAttribute="leading" constant="20" id="Odf-QE-CQh"/>
                                                 <constraint firstItem="dVJ-Gh-aT8" firstAttribute="top" secondItem="bu5-zC-jzj" secondAttribute="bottom" constant="4" id="VOa-Zk-wRf"/>
                                                 <constraint firstAttribute="bottom" secondItem="uE8-X4-OPi" secondAttribute="bottom" constant="12" id="Wo6-CA-a0f"/>
-                                                <constraint firstItem="uE8-X4-OPi" firstAttribute="leading" secondItem="dVJ-Gh-aT8" secondAttribute="leading" id="beP-13-VqH"/>
                                                 <constraint firstItem="dVJ-Gh-aT8" firstAttribute="leading" secondItem="bu5-zC-jzj" secondAttribute="leading" id="hds-KC-Be0"/>
                                                 <constraint firstItem="uE8-X4-OPi" firstAttribute="top" secondItem="dVJ-Gh-aT8" secondAttribute="bottom" constant="4" id="ksM-tN-CdR"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dVJ-Gh-aT8" secondAttribute="trailing" constant="20" id="pCA-1L-ddx"/>
@@ -307,6 +307,56 @@
             </objects>
             <point key="canvasLocation" x="2749.275362318841" y="97.767857142857139"/>
         </scene>
+        <!--Person View Controller-->
+        <scene sceneID="yhP-5y-Rad">
+            <objects>
+                <viewController storyboardIdentifier="PersonViewController" id="QwH-pt-cl4" customClass="PersonViewController" customModule="TMDBProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6gQ-4F-BH8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Person" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WzK-0D-uZW">
+                                <rect key="frame" x="69" y="270" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9nl-VI-259"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RYo-77-cjN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4120" y="98"/>
+        </scene>
+        <!--Drama View Controller-->
+        <scene sceneID="3qm-su-PCh">
+            <objects>
+                <viewController storyboardIdentifier="DramaViewController" id="n1n-d1-YCb" customClass="DramaViewController" customModule="TMDBProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Kt-In-i7z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Drama" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="E8q-lM-hqZ">
+                                <rect key="frame" x="87" y="255" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hvb-db-A4O"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YZ3-gE-1DX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3465" y="98"/>
+        </scene>
         <!--Movie Detail View Controller-->
         <scene sceneID="zbr-Kr-Rau">
             <objects>
@@ -352,7 +402,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fNs-Mp-juQ">
                                 <rect key="frame" x="0.0" y="244" width="414" height="618"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="N4u-9l-ZLN">
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="N4u-9l-ZLN" customClass="MovieDetailHeaderView" customModule="TMDBProject" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
@@ -381,7 +431,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="115" id="BjL-MT-t1q">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieOverviewTableViewCell" rowHeight="115" id="BjL-MT-t1q" customClass="MovieOverviewTableViewCell" customModule="TMDBProject" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="88.5" width="414" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BjL-MT-t1q" id="3J3-iU-JrZ">
@@ -415,7 +465,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="110" id="gRJ-aw-ix3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCastTableViewCell" rowHeight="110" id="gRJ-aw-ix3" customClass="MovieCastTableViewCell" customModule="TMDBProject" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="203.5" width="414" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gRJ-aw-ix3" id="Fgn-5e-a57">
@@ -431,13 +481,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OSV-z4-82L">
                                                     <rect key="frame" x="108" y="30" width="46" height="50.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IY7-tf-aaU">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IY7-tf-aaU">
                                                             <rect key="frame" x="0.0" y="0.0" width="46" height="23"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHU-eC-u3o">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHU-eC-u3o">
                                                             <rect key="frame" x="0.0" y="31" width="46" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" systemColor="systemGrayColor"/>
@@ -474,7 +524,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="unF-eA-TAR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3873.913043478261" y="105.80357142857143"/>
+            <point key="canvasLocation" x="2749" y="862"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RG3-hq-oPV">
@@ -502,6 +552,9 @@
         <image name="list.triangle" catalog="system" width="128" height="91"/>
         <image name="paperclip" catalog="system" width="121" height="128"/>
         <image name="star.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -517,8 +570,14 @@
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
