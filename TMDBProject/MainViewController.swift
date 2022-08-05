@@ -39,10 +39,7 @@ class MainViewController: TabmanViewController, PageboyViewControllerDataSource,
         // 뷰에 바 추가
         settingTabBar(ctBar: bar)
         addBar(bar, dataSource: self, at: .top)
-
-
    }
-    
 
 
 }

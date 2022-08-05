@@ -61,7 +61,8 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
         moviePageCollectionView.dataSource = self
         moviePageCollectionView.prefetchDataSource = self
         
-        moviePageCollectionView.register(EmptyCollectionViewCell.self, forCellWithReuseIdentifier: EmptyCollectionViewCell.identifier)
+        let nibName = UINib(nibName: EmptyCollectionViewCell.identifier, bundle: nil)
+        moviePageCollectionView.register(nibName, forCellWithReuseIdentifier: EmptyCollectionViewCell.identifier)
         
         configure()
         getGenre()
