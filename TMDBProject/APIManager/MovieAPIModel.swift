@@ -38,3 +38,14 @@ struct Casts: Codable {
     var id: Int
     var cast: [Cast]
 }
+
+// 영화 비디오를 받아올 구조체 
+struct Videos: Codable {
+    var id: Int
+    var results: [Video]
+}
+struct Video: Codable {
+    var key: String
+    var site: String
+    var type: String
+}

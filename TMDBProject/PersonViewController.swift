@@ -14,5 +14,4 @@ class PersonViewController: UIViewController {
         super.viewDidLoad()
 
     }
-    
 }

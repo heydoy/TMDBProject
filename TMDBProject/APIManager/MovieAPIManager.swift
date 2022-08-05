@@ -17,6 +17,7 @@ class MovieAPIManager {
     typealias movieCompletionHandler = (Int, [Item]) -> Void
     typealias movieGenreCompletionHandler = ([Int:String]) -> Void
     typealias movieCastCompletionHandler = ([Cast]) -> Void
+    typealias movieVideoCompletionHandler = ([Video]) -> Void
     
     // 영화 리스트 가져오기
     func getMovieTrend(time_window: String, start: Int, completionHandler: @escaping movieCompletionHandler ) {
@@ -29,7 +30,6 @@ class MovieAPIManager {
             "api_key": Keys.TMDB,
             "page": start
         ]
-        
         
         AF.request(url, method: .get, parameters: parameter).validate().responseDecodable(of: Items.self, queue: .global()) { response in
             switch response.result {
@@ -93,6 +93,27 @@ class MovieAPIManager {
             case .failure(let error) :
                 print(error)
             }
+        }
+    }
+    
+    // 영화 비디오 가져오기
+    func getMovieVideo (movie_id: Int, completionHandler: @escaping movieVideoCompletionHandler ) {
+        let url = "\(EndPoint.TMDB)/movie/\(movie_id)/videos"
+        
+        let parameter: Parameters = [
+            "api_key" : Keys.TMDB
+        ]
+        
+        AF.request(url, method: .get, parameters: parameter).validate().responseDecodable(of: Videos.self, queue: .global()) { response in
+            switch response.result {
+            case .success(let value) :
+                let list = value.results
+                completionHandler(list)
+                
+            case .failure(let error) :
+                print(error)
+            }
+            
         }
     }
     
