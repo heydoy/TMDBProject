@@ -26,3 +26,15 @@ struct Item: Codable {
     var genre_ids: [Int]
     var backdrop_path: String
 }
+
+// 영화 출연진을 받아올 구조체
+struct Cast: Codable {
+    var name: String
+    var character: String
+    var profile_path: String?
+}
+
+struct Casts: Codable {
+    var id: Int
+    var cast: [Cast]
+}
