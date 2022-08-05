@@ -30,7 +30,7 @@ class MovieDetailViewController: UIViewController{
     
     let hud = JGProgressHUD()
     
-    var overviewHeight: CGFloat = 115
+    var overviewHeight: CGFloat = 80
     var overviewOpened: Bool = false
     
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -163,13 +163,14 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
             return CGFloat(0)
         }
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
         if indexPath.section == 0 {
             
             tableView.beginUpdates()
-            overviewHeight = overviewOpened ? 115 : 180
+            overviewHeight = overviewOpened ? 80 : UITableView.automaticDimension
             overviewOpened = !overviewOpened
             tableView.endUpdates()
             

@@ -79,6 +79,8 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
         moviePageCollectionView.dataSource = self
         moviePageCollectionView.prefetchDataSource = self
         
+        moviePageCollectionView.register(EmptyCollectionViewCell.self, forCellWithReuseIdentifier: EmptyCollectionViewCell.identifier)
+        
         configure()
         getGenre()
         
@@ -157,8 +159,8 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
     func getGenre() {
         let url = "https://api.themoviedb.org/3/genre/movie/list"
         let parameter: Parameters = [
-            "api_key" : Keys.TMDB,
-            "language": "en-US"
+            "api_key" : Keys.TMDB
+            
         ]
         
         AF.request(url, method: .get, parameters: parameter).validate().responseData() { response in
@@ -199,12 +201,14 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
 
 }
 
+// 콜렉션 뷰
 extension MovieViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     // 셀 갯수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == moviePageCollectionView {
-            return list.count
+            
+            return list.count == 0 ? 1 : list.count
         } else {
             return 0
         }
@@ -212,38 +216,47 @@ extension MovieViewController: UICollectionViewDataSource, UICollectionViewDeleg
     
     // 셀 종류
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        if collectionView == moviePageCollectionView{
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TabPageCollectionViewCell.identifier, for: indexPath) as? TabPageCollectionViewCell else { return UICollectionViewCell() }
-            let item = list[indexPath.item]
-            cell.configure(item)
-            
-            var stringGenre: [String] = []
-            
-            for id in item.genre_ids {
-                if genres.keys.contains(id) {
-                    if let genre = genres[id] {
-                        stringGenre.append(genre)
-                    }
-                }
-            }
-            
-            print("장르 ---> \(stringGenre)")
-            
-            cell.configureGenre(genres: stringGenre)
-            
+        if list.isEmpty {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EmptyCollectionViewCell.identifier, for: indexPath) as? EmptyCollectionViewCell else { return UICollectionViewCell() }
+            print("빈 셀 ----> \(cell)")
             return cell
             
         } else {
-            return UICollectionViewCell()
-        }
+        
+            if collectionView == moviePageCollectionView{
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TabPageCollectionViewCell.identifier, for: indexPath) as? TabPageCollectionViewCell else { return UICollectionViewCell() }
+                let item = list[indexPath.item]
+                cell.configure(item)
+                
+                var stringGenre: [String] = []
+                
+                for id in item.genre_ids {
+                    if genres.keys.contains(id) {
+                        if let genre = genres[id] {
+                            stringGenre.append(genre)
+                        }
+                    }
+                }
+                            
+                cell.configureGenre(genres: stringGenre)
+                
+                return cell
+            }
+            
+            else {
+                return UICollectionViewCell()
+            }
+            
+            
+         }
+            
         
     }
     // 셀 크기
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
          if collectionView == moviePageCollectionView {
-            let width: CGFloat = UIScreen.main.bounds.width - 40
+            let width: CGFloat = UIScreen.main.bounds.width
             let height: CGFloat = 400
             
             return CGSize(width: width, height: height)
