@@ -15,10 +15,7 @@ class MainViewController: TabmanViewController, PageboyViewControllerDataSource,
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // datasource 위임
-        
-        
+                
         // 탭에 따라 보여줄 화면 추가
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc1 = sb.instantiateViewController(withIdentifier: MovieViewController.identifier) as! MovieViewController

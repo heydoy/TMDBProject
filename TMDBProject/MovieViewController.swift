@@ -11,26 +11,6 @@ import SwiftyJSON
 import JGProgressHUD
 
 
-// 데이터 구조체
-struct Items: Codable{
-    var page: Int
-    var results: [Item]
-    var total_results: Int
-    var total_pages: Int
-}
-
-
-struct Item: Codable {
-    var id: Int
-    var title: String
-    var adult: Bool
-    var overview: String
-    var vote_average: Double
-    var poster_path: String
-    var release_date: String
-    var genre_ids: [Int]
-    var backdrop_path: String
-}
 
 // VC 클래스
 class MovieViewController: UIViewController, UICollectionViewDelegate {
@@ -43,6 +23,8 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
     var timeWindowArray: [UIButton] {
         [ weekButton, dayButton]
     }
+    
+    
     
     var media_type: String?
     var time_window: String = "" {
@@ -124,64 +106,23 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
     func getResult() {
         
         hud.show(in: self.view)
-        
-        let media_type = "movie"
-        let time_window = self.time_window
-        
-        let url = "\(EndPoint.TMDB_URL)/\(media_type)/\(time_window)"
-        
-        let parameter: Parameters = [
-            "api_key": Keys.TMDB,
-            "page": self.start
-        ]
-        
-        
-        AF.request(url, method: .get, parameters: parameter).validate().responseDecodable(of: Items.self) { response in
-            switch response.result {
-            case .success(let value):
-                print(value)
-                self.totalCount = value.total_results
-                self.list.append(contentsOf: value.results)
-                self.hud.dismiss(afterDelay: 0.2)
+        MovieAPIManager.shared.getMovieTrend(time_window: time_window, start: start) { totalCount, list in
+            self.totalCount = totalCount
+            self.list.append(contentsOf: list)
+            DispatchQueue.main.async {
                 self.moviePageCollectionView.reloadData()
-                
-            case .failure(let error):
-                self.hud.dismiss(afterDelay: 0.2)
-                print(error)
-                
             }
         }
+        hud.dismiss(animated: true)
+       
         
         
     }
     
     // 장르 API 호출
     func getGenre() {
-        let url = "https://api.themoviedb.org/3/genre/movie/list"
-        let parameter: Parameters = [
-            "api_key" : Keys.TMDB
-            
-        ]
-        
-        AF.request(url, method: .get, parameters: parameter).validate().responseData() { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-                
-                for item in json["genres"].arrayValue {
-                    let id = item["id"].intValue
-                    let name = item["name"].stringValue
-                    
-                    self.genres.updateValue(name, forKey: id)
-
-                }
-                print(self.genres)
-                
-            case .failure(let error):
-                print(error)
-                
-            }
+        MovieAPIManager.shared.getMovieGenre { genres in
+            self.genres = genres
         }
     }
     
