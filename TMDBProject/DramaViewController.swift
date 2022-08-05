@@ -9,9 +9,7 @@ import UIKit
 
 class DramaViewController: UIViewController {
     static let identifier = "DramaViewController"
-    
    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -71,6 +71,18 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
     }
     
     // MARK: - Actions
+    @objc
+    func linkButtonTapped(_ sender: UIButton) {
+        // sender.tag를 이용하여 movie_id를 찾고 이걸로 웹뷰 연결하기
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: WebViewController.identifier) as! WebViewController
+        
+        vc.movie_id = self.list[sender.tag].id
+        vc.navigationItem.title = self.list[sender.tag].title
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     
     // 타임윈도우 버튼 클릭하면 해당 태그에 맞춰서 API 요청하고 화면을 새로운 데이터에 맞춰 갱신
@@ -115,8 +127,6 @@ class MovieViewController: UIViewController, UICollectionViewDelegate {
             }
         }
         hud.dismiss(animated: true)
-       
-        
         
     }
     
@@ -181,6 +191,10 @@ extension MovieViewController: UICollectionViewDataSource, UICollectionViewDeleg
                 }
                             
                 cell.configureGenre(genres: stringGenre)
+                // 버튼에 태깅
+                cell.linkButton.tag = indexPath.item
+                cell.linkButton.addTarget(self, action: #selector(linkButtonTapped), for: .touchUpInside)
+
                 
                 return cell
             }

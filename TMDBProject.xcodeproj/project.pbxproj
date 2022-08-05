@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A20CCA69289D50AB00AF8113 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20CCA68289D50AB00AF8113 /* WebViewController.swift */; };
 		A235312C289BC1130067F2F2 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = A235312B289BC1130067F2F2 /* Tabman */; };
 		A2CA112C289C402A004A3897 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2CA112B289C402A004A3897 /* Main.storyboard */; };
 		A2CA112E289C405D004A3897 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA112D289C405D004A3897 /* MainViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A20CCA68289D50AB00AF8113 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A2CA112B289C402A004A3897 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A2CA112D289C405D004A3897 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A2CA112F289C4070004A3897 /* PersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				A2CA1130289C4070004A3897 /* DramaViewController.swift */,
 				A2CA112F289C4070004A3897 /* PersonViewController.swift */,
 				A2CA1133289C40A1004A3897 /* MovieViewController.swift */,
+				A20CCA68289D50AB00AF8113 /* WebViewController.swift */,
 				A2CA1141289C931C004A3897 /* EmptyCollectionViewCell.swift */,
 				A2CA1142289C931C004A3897 /* EmptyCollectionViewCell.xib */,
 				A2CA1134289C40A1004A3897 /* TabPageCollectionViewCell.swift */,
@@ -244,6 +247,7 @@
 				A2CA1132289C4070004A3897 /* DramaViewController.swift in Sources */,
 				A2F2E4A2289CF552002DB67E /* MovieAPIModel.swift in Sources */,
 				A2CA113C289C40B0004A3897 /* MovieDetailViewController.swift in Sources */,
+				A20CCA69289D50AB00AF8113 /* WebViewController.swift in Sources */,
 				A2CA112E289C405D004A3897 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

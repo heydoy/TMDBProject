@@ -12,6 +12,5 @@ class PersonViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 }
