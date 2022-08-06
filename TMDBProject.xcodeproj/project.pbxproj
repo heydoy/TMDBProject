@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A20CCA69289D50AB00AF8113 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20CCA68289D50AB00AF8113 /* WebViewController.swift */; };
 		A235312C289BC1130067F2F2 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = A235312B289BC1130067F2F2 /* Tabman */; };
+		A28CCF4E289E8AFC0001584E /* TabPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28CCF4D289E8AFC0001584E /* TabPageCollectionViewCell.swift */; };
 		A2CA112C289C402A004A3897 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2CA112B289C402A004A3897 /* Main.storyboard */; };
 		A2CA112E289C405D004A3897 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA112D289C405D004A3897 /* MainViewController.swift */; };
 		A2CA1131289C4070004A3897 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA112F289C4070004A3897 /* PersonViewController.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		A20CCA68289D50AB00AF8113 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		A28CCF4D289E8AFC0001584E /* TabPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabPageCollectionViewCell.swift; path = "../../../TMDBProject 2/UI/Movie/TabPageCollectionViewCell.swift"; sourceTree = "<group>"; };
 		A2CA112B289C402A004A3897 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A2CA112D289C405D004A3897 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A2CA112F289C4070004A3897 /* PersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +79,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A28CCF4A289E8ADC0001584E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A2CA112D289C405D004A3897 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		A28CCF4B289E8AE40001584E /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				A2CA1133289C40A1004A3897 /* MovieViewController.swift */,
+				A28CCF4D289E8AFC0001584E /* TabPageCollectionViewCell.swift */,
+			);
+			path = Movie;
+			sourceTree = "<group>";
+		};
+		A28CCF4F289E8B7A0001584E /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A2CA1138289C40AF004A3897 /* MovieDetailViewController.swift */,
+				A2CA1139289C40AF004A3897 /* MovieCastTableViewCell.swift */,
+				A2CA113A289C40B0004A3897 /* MovieOverviewTableViewCell.swift */,
+				A20CCA68289D50AB00AF8113 /* WebViewController.swift */,
+			);
+			path = MovieDetail;
+			sourceTree = "<group>";
+		};
+		A28CCF50289E8B870001584E /* EmptyScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A2CA1141289C931C004A3897 /* EmptyCollectionViewCell.swift */,
+				A2CA1142289C931C004A3897 /* EmptyCollectionViewCell.xib */,
+			);
+			path = EmptyScreen;
+			sourceTree = "<group>";
+		};
+		A28CCF51289E8B920001584E /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				A2CA112F289C4070004A3897 /* PersonViewController.swift */,
+			);
+			path = Person;
+			sourceTree = "<group>";
+		};
+		A28CCF52289E8B9A0001584E /* Drama */ = {
+			isa = PBXGroup;
+			children = (
+				A2CA1130289C4070004A3897 /* DramaViewController.swift */,
+			);
+			path = Drama;
+			sourceTree = "<group>";
+		};
 		A2E6E19D2899F6C800844770 = {
 			isa = PBXGroup;
 			children = (
@@ -101,17 +156,13 @@
 				A2E6E1CB2899FAD900844770 /* Constant */,
 				A2CA112B289C402A004A3897 /* Main.storyboard */,
 				A2F2E49E289CEC8D002DB67E /* APIManager */,
-				A2CA112D289C405D004A3897 /* MainViewController.swift */,
-				A2CA1133289C40A1004A3897 /* MovieViewController.swift */,
+				A28CCF4A289E8ADC0001584E /* Main */,
+				A28CCF4B289E8AE40001584E /* Movie */,
 				A2CA1134289C40A1004A3897 /* TabPageCollectionViewCell.swift */,
-				A2CA1138289C40AF004A3897 /* MovieDetailViewController.swift */,
-				A2CA1139289C40AF004A3897 /* MovieCastTableViewCell.swift */,
-				A2CA113A289C40B0004A3897 /* MovieOverviewTableViewCell.swift */,
-				A20CCA68289D50AB00AF8113 /* WebViewController.swift */,
-				A2CA1130289C4070004A3897 /* DramaViewController.swift */,
-				A2CA112F289C4070004A3897 /* PersonViewController.swift */,
-				A2CA1141289C931C004A3897 /* EmptyCollectionViewCell.swift */,
-				A2CA1142289C931C004A3897 /* EmptyCollectionViewCell.xib */,
+				A28CCF4F289E8B7A0001584E /* MovieDetail */,
+				A28CCF52289E8B9A0001584E /* Drama */,
+				A28CCF51289E8B920001584E /* Person */,
+				A28CCF50289E8B870001584E /* EmptyScreen */,
 				A2E6E1B22899F6C900844770 /* Assets.xcassets */,
 				A2E6E1B42899F6C900844770 /* LaunchScreen.storyboard */,
 				A2E6E1B72899F6C900844770 /* Info.plist */,
@@ -248,6 +299,7 @@
 				A2F2E4A2289CF552002DB67E /* MovieAPIModel.swift in Sources */,
 				A2CA113C289C40B0004A3897 /* MovieDetailViewController.swift in Sources */,
 				A20CCA69289D50AB00AF8113 /* WebViewController.swift in Sources */,
+				A28CCF4E289E8AFC0001584E /* TabPageCollectionViewCell.swift in Sources */,
 				A2CA112E289C405D004A3897 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
