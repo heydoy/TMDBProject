@@ -15,7 +15,6 @@
 		A2CA1131289C4070004A3897 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA112F289C4070004A3897 /* PersonViewController.swift */; };
 		A2CA1132289C4070004A3897 /* DramaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA1130289C4070004A3897 /* DramaViewController.swift */; };
 		A2CA1135289C40A1004A3897 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA1133289C40A1004A3897 /* MovieViewController.swift */; };
-		A2CA1136289C40A1004A3897 /* TabPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA1134289C40A1004A3897 /* TabPageCollectionViewCell.swift */; };
 		A2CA113C289C40B0004A3897 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA1138289C40AF004A3897 /* MovieDetailViewController.swift */; };
 		A2CA113D289C40B0004A3897 /* MovieCastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA1139289C40AF004A3897 /* MovieCastTableViewCell.swift */; };
 		A2CA113E289C40B0004A3897 /* MovieOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA113A289C40B0004A3897 /* MovieOverviewTableViewCell.swift */; };
@@ -44,7 +43,6 @@
 		A2CA112F289C4070004A3897 /* PersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		A2CA1130289C4070004A3897 /* DramaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DramaViewController.swift; sourceTree = "<group>"; };
 		A2CA1133289C40A1004A3897 /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
-		A2CA1134289C40A1004A3897 /* TabPageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabPageCollectionViewCell.swift; path = "../../TMDBProject 2/UI/Movie/TabPageCollectionViewCell.swift"; sourceTree = "<group>"; };
 		A2CA1138289C40AF004A3897 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		A2CA1139289C40AF004A3897 /* MovieCastTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCastTableViewCell.swift; sourceTree = "<group>"; };
 		A2CA113A289C40B0004A3897 /* MovieOverviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieOverviewTableViewCell.swift; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 				A2F2E49E289CEC8D002DB67E /* APIManager */,
 				A28CCF4A289E8ADC0001584E /* Main */,
 				A28CCF4B289E8AE40001584E /* Movie */,
-				A2CA1134289C40A1004A3897 /* TabPageCollectionViewCell.swift */,
 				A28CCF4F289E8B7A0001584E /* MovieDetail */,
 				A28CCF52289E8B9A0001584E /* Drama */,
 				A28CCF51289E8B920001584E /* Person */,
@@ -294,7 +291,6 @@
 				A2E6E1AC2899F6C800844770 /* SceneDelegate.swift in Sources */,
 				A2CA1131289C4070004A3897 /* PersonViewController.swift in Sources */,
 				A2CA1143289C931C004A3897 /* EmptyCollectionViewCell.swift in Sources */,
-				A2CA1136289C40A1004A3897 /* TabPageCollectionViewCell.swift in Sources */,
 				A2CA1132289C4070004A3897 /* DramaViewController.swift in Sources */,
 				A2F2E4A2289CF552002DB67E /* MovieAPIModel.swift in Sources */,
 				A2CA113C289C40B0004A3897 /* MovieDetailViewController.swift in Sources */,
