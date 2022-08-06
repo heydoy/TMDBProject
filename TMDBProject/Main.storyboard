@@ -350,7 +350,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3j6-V6-y4P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3563.7681159420295" y="470.75892857142856"/>
+            <point key="canvasLocation" x="2330" y="823"/>
         </scene>
         <!--Person View Controller-->
         <scene sceneID="yhP-5y-Rad">
@@ -400,7 +400,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YZ3-gE-1DX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4662" y="85"/>
+            <point key="canvasLocation" x="3755" y="84"/>
         </scene>
         <!--Movie Detail View Controller-->
         <scene sceneID="zbr-Kr-Rau">
@@ -555,7 +555,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="unF-eA-TAR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2747.826086956522" y="861.83035714285711"/>
+            <point key="canvasLocation" x="3125" y="823"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RG3-hq-oPV">
