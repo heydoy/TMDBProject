@@ -170,7 +170,7 @@ extension MovieViewController: UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if list.isEmpty {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EmptyCollectionViewCell.identifier, for: indexPath) as? EmptyCollectionViewCell else { return UICollectionViewCell() }
-            print("빈 셀 ----> \(cell)")
+            
             return cell
             
         } else {
@@ -194,7 +194,7 @@ extension MovieViewController: UICollectionViewDataSource, UICollectionViewDeleg
                 // 버튼에 태깅
                 cell.linkButton.tag = indexPath.item
                 cell.linkButton.addTarget(self, action: #selector(linkButtonTapped), for: .touchUpInside)
-
+                
                 
                 return cell
             }

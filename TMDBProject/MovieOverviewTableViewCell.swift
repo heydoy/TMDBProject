@@ -13,6 +13,8 @@ class MovieOverviewTableViewCell: UITableViewCell {
     
     @IBOutlet weak var overviewLabel: UILabel!
     
+    @IBOutlet weak var viewMoreButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

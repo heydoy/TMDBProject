@@ -23,7 +23,11 @@ class MovieDetailViewController: UIViewController{
     
     let defaultOverviewHeight: CGFloat = 80
     var overviewHeight: CGFloat = 80
-    var overviewOpened: Bool = false
+    var overviewOpened: Bool = false {
+        didSet {
+            tableView.reloadRows(at: [[0,0]], with: .automatic)
+        }
+    }
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var posterImageView: UIImageView!
@@ -57,11 +61,7 @@ class MovieDetailViewController: UIViewController{
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-            
         }
-        
-            
-        
         
         hud.dismiss(animated: true)
     }
@@ -119,10 +119,16 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
             
             if let item = self.movie {
                 cell.configure(item.overview)
-                print(item)
             }
+            // 버튼을 누르면 펼쳐지게
+            cell.viewMoreButton.addTarget(self, action: #selector(viewMoreButtonTapped), for: .touchUpInside)
+            
+            let buttonImage = overviewOpened ? "chevron.up":"chevron.down"
+            
+            cell.viewMoreButton.setImage(UIImage(systemName: buttonImage), for: .normal)
             
             return cell
+            
         } else if indexPath.section == 1 {
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieCastTableViewCell.identifier, for: indexPath) as? MovieCastTableViewCell else { return UITableViewCell() }
@@ -146,14 +152,30 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+
         if indexPath.section == 0 {
-            
+
             tableView.beginUpdates()
             overviewHeight = overviewOpened ?
                             defaultOverviewHeight : UITableView.automaticDimension
+            
             overviewOpened = !overviewOpened
+            
             tableView.endUpdates()
         }
+    }
+}
+
+extension MovieDetailViewController {
+    // 버튼을 누르면 overview영역이 펼쳐지게
+    @objc
+    func viewMoreButtonTapped(_ sender: UIButton) {
+        tableView.beginUpdates()
+        overviewHeight = overviewOpened ?
+                        defaultOverviewHeight : UITableView.automaticDimension
+        overviewOpened = !overviewOpened
+        
+        tableView.endUpdates()
+        
     }
 }
