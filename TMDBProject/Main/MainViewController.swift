@@ -20,9 +20,10 @@ class MainViewController: TabmanViewController, PageboyViewControllerDataSource,
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc1 = sb.instantiateViewController(withIdentifier: MovieViewController.identifier) as! MovieViewController
         
-        let vc2 = sb.instantiateViewController(withIdentifier: PersonViewController.identifier) as! PersonViewController
+        let vc2 = sb.instantiateViewController(withIdentifier: DramaViewController.identifier ) as! DramaViewController
         
-        let vc3 = sb.instantiateViewController(withIdentifier: DramaViewController.identifier ) as! DramaViewController
+        let vc3 = sb.instantiateViewController(withIdentifier: PersonViewController.identifier) as! PersonViewController
+        
         viewControllers.append(vc1)
         viewControllers.append(vc2)
         viewControllers.append(vc3)
@@ -50,9 +51,9 @@ extension MainViewController {
         case 0 :
             return TMBarItem(title: "movie")
         case 1 :
-            return TMBarItem(title: "person")
-        case 2:
             return TMBarItem(title: "drama")
+        case 2:
+            return TMBarItem(title: "person")
         default:
             let title = "page\(index)"
             return TMBarItem(title: title)

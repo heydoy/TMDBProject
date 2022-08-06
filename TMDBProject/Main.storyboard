@@ -288,7 +288,7 @@
                             <constraint firstItem="lP4-sO-1pP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="Nxk-81-U0w"/>
                             <constraint firstItem="rLU-IC-74y" firstAttribute="leading" secondItem="lP4-sO-1pP" secondAttribute="trailing" constant="16" id="Ub2-ul-Azg"/>
                             <constraint firstItem="rLU-IC-74y" firstAttribute="centerY" secondItem="lP4-sO-1pP" secondAttribute="centerY" id="mT0-Fy-lJ4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rLU-IC-74y" secondAttribute="trailing" symbolic="YES" id="mV7-o7-kKe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rLU-IC-74y" secondAttribute="trailing" constant="20" id="mV7-o7-kKe"/>
                             <constraint firstItem="ktb-9W-a7F" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xG4-rO-BbK"/>
                             <constraint firstAttribute="bottom" secondItem="ktb-9W-a7F" secondAttribute="bottom" id="xm7-wJ-l3V"/>
                         </constraints>
@@ -360,22 +360,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Person" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WzK-0D-uZW">
-                                <rect key="frame" x="69" y="270" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYA-Sy-lFb">
+                                <rect key="frame" x="20" y="56" width="55" height="31"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="week" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTimeWindowButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ciy-nS-nCz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FcF-AM-z1z">
+                                <rect key="frame" x="91" y="56" width="45" height="31"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="day" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTimeWindowButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bJH-0h-zVS"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hHw-a7-fmu">
+                                <rect key="frame" x="0.0" y="99" width="414" height="797"/>
+                                <color key="backgroundColor" red="0.84003933399999997" green="0.96841138599999999" blue="0.13532046" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yCX-Pr-HaJ">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aqJ-0n-944">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kc4-Lw-nWE">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9nl-VI-259"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hHw-a7-fmu" firstAttribute="top" secondItem="oYA-Sy-lFb" secondAttribute="bottom" constant="12" id="0fn-FW-Azp"/>
+                            <constraint firstItem="FcF-AM-z1z" firstAttribute="centerY" secondItem="oYA-Sy-lFb" secondAttribute="centerY" id="1IY-w1-Hct"/>
+                            <constraint firstItem="9nl-VI-259" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FcF-AM-z1z" secondAttribute="trailing" constant="20" id="1NN-Zs-fYf"/>
+                            <constraint firstAttribute="bottom" secondItem="hHw-a7-fmu" secondAttribute="bottom" id="Cds-Mk-Ldd"/>
+                            <constraint firstItem="hHw-a7-fmu" firstAttribute="leading" secondItem="9nl-VI-259" secondAttribute="leading" id="TRt-85-vnR"/>
+                            <constraint firstItem="9nl-VI-259" firstAttribute="trailing" secondItem="hHw-a7-fmu" secondAttribute="trailing" id="UsX-OQ-BWg"/>
+                            <constraint firstItem="oYA-Sy-lFb" firstAttribute="top" secondItem="9nl-VI-259" secondAttribute="top" constant="12" id="aKf-SQ-kEu"/>
+                            <constraint firstItem="oYA-Sy-lFb" firstAttribute="leading" secondItem="9nl-VI-259" secondAttribute="leading" constant="20" id="gLt-SI-L5Y"/>
+                            <constraint firstItem="FcF-AM-z1z" firstAttribute="leading" secondItem="oYA-Sy-lFb" secondAttribute="trailing" constant="16" id="xjx-Tv-bnv"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RYo-77-cjN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5317" y="85"/>
+            <point key="canvasLocation" x="3513" y="83"/>
         </scene>
         <!--Drama View Controller-->
         <scene sceneID="3qm-su-PCh">
@@ -385,22 +432,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Drama" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="E8q-lM-hqZ">
-                                <rect key="frame" x="87" y="255" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tR-D7-IaW">
+                                <rect key="frame" x="20" y="56" width="55" height="31"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="week" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTimeWindowButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="50e-Uk-OLH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLQ-hE-v7n">
+                                <rect key="frame" x="91" y="56" width="45" height="31"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="day" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTimeWindowButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jwS-s4-FZz"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kqW-B0-gZM">
+                                <rect key="frame" x="0.0" y="99" width="414" height="797"/>
+                                <color key="backgroundColor" red="0.92968112230300903" green="0.76934272050857544" blue="0.66843670606613159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="59f-aO-Nsq">
+                                    <size key="itemSize" width="209" height="291"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6h9-RB-dS3">
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="291"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mzA-zi-R2Z">
+                                            <rect key="frame" x="0.0" y="0.0" width="207" height="291"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="207" height="291"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hvb-db-A4O"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kqW-B0-gZM" firstAttribute="trailing" secondItem="Hvb-db-A4O" secondAttribute="trailing" id="1YH-2Z-KQF"/>
+                            <constraint firstItem="0tR-D7-IaW" firstAttribute="top" secondItem="Hvb-db-A4O" secondAttribute="top" constant="12" id="Awe-Lj-oAz"/>
+                            <constraint firstItem="wLQ-hE-v7n" firstAttribute="leading" secondItem="0tR-D7-IaW" secondAttribute="trailing" constant="16" id="BW7-Ag-DBX"/>
+                            <constraint firstItem="wLQ-hE-v7n" firstAttribute="centerY" secondItem="0tR-D7-IaW" secondAttribute="centerY" id="Mru-do-STl"/>
+                            <constraint firstItem="0tR-D7-IaW" firstAttribute="leading" secondItem="Hvb-db-A4O" secondAttribute="leading" constant="20" id="TGS-Ku-nxj"/>
+                            <constraint firstAttribute="bottom" secondItem="kqW-B0-gZM" secondAttribute="bottom" id="Tix-uL-NtK"/>
+                            <constraint firstItem="kqW-B0-gZM" firstAttribute="top" secondItem="0tR-D7-IaW" secondAttribute="bottom" constant="12" id="V6Z-NG-tnY"/>
+                            <constraint firstItem="kqW-B0-gZM" firstAttribute="leading" secondItem="Hvb-db-A4O" secondAttribute="leading" id="wIa-25-T0I"/>
+                            <constraint firstItem="Hvb-db-A4O" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wLQ-hE-v7n" secondAttribute="trailing" constant="20" id="xz2-TC-UgK"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YZ3-gE-1DX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3755" y="84"/>
+            <point key="canvasLocation" x="4252.1739130434789" y="81.696428571428569"/>
         </scene>
         <!--Movie Detail View Controller-->
         <scene sceneID="zbr-Kr-Rau">
@@ -502,13 +597,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OSV-z4-82L">
                                                     <rect key="frame" x="120" y="33" width="39.5" height="44.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IY7-tf-aaU">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IY7-tf-aaU">
                                                             <rect key="frame" x="0.0" y="0.0" width="39.5" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHU-eC-u3o">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHU-eC-u3o">
                                                             <rect key="frame" x="0.0" y="27.5" width="39.5" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" systemColor="systemGrayColor"/>
@@ -584,9 +679,6 @@
         <image name="list.triangle" catalog="system" width="128" height="91"/>
         <image name="paperclip" catalog="system" width="121" height="128"/>
         <image name="star.circle.fill" catalog="system" width="128" height="121"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -599,14 +691,8 @@
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
