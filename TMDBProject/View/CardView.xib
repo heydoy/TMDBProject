@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardView" customModule="TMDBProject" customModuleProvider="target">
+            <connections>
+                <outlet property="bookmarkButton" destination="wIf-vK-kpe" id="sU1-dF-9yR"/>
+                <outlet property="posterImageView" destination="tmh-kP-4vO" id="6At-Q2-3Ec"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="160"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tmh-kP-4vO">
+                    <rect key="frame" x="0.0" y="0.0" width="120" height="160"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIf-vK-kpe">
+                    <rect key="frame" x="80" y="4" width="36" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="wIf-vK-kpe" secondAttribute="height" multiplier="1:1" id="X2I-Ig-hBa"/>
+                    </constraints>
+                    <color key="tintColor" red="0.81900405649999997" green="0.96841138599999999" blue="0.197419545" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="heart.fill" catalog="system">
+                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="15"/>
+                    </buttonConfiguration>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="tmh-kP-4vO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6Mf-7j-4s9"/>
+                <constraint firstItem="tmh-kP-4vO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9wd-SU-Jo0"/>
+                <constraint firstAttribute="trailing" secondItem="tmh-kP-4vO" secondAttribute="trailing" id="EEO-8z-vai"/>
+                <constraint firstAttribute="bottom" secondItem="tmh-kP-4vO" secondAttribute="bottom" id="W8j-ZW-ZKa"/>
+                <constraint firstAttribute="trailing" secondItem="wIf-vK-kpe" secondAttribute="trailing" constant="4" id="mfO-QX-WnV"/>
+                <constraint firstItem="wIf-vK-kpe" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="oYX-zh-DEr"/>
+                <constraint firstItem="wIf-vK-kpe" firstAttribute="width" secondItem="tmh-kP-4vO" secondAttribute="width" multiplier="0.3" id="w5w-oJ-9P2"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-68.115942028985515" y="-158.37053571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
