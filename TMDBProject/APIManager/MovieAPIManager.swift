@@ -117,4 +117,71 @@ class MovieAPIManager {
         }
     }
     
+    let movieList = [
+        ("Prey", 766507),
+        ("Elvis", 614934),
+        ("Luck", 585511),
+        ("The Sandman", 90802),
+        ("The Little Guy", 1010819)
+    ]
+    let imageURL: String = "https://image.tmdb.org/t/p/w500"
+    func movieRecommendationURL(movieID: Int) -> String {
+        return "https://api.themoviedb.org/3/movie/\(movieID)/similar"
+    }
+    
+    
+    
+    // 비슷한 영화 가져오기
+    func getSimilarMovie(movieID: Int, completionHandler: @escaping([String]) -> Void ) {
+        
+        let body: Parameters = [
+            "api_key" : Keys.TMDB
+        ]
+        
+        var posterList: [String] = []
+        
+        AF.request(movieRecommendationURL(movieID: movieID), method: .get, parameters: body ).validate().responseData { response in
+            switch response.result {
+            case .success(let value) :
+                let json = JSON(value)
+                for item in json["results"].arrayValue {
+                    if item["poster_path"].stringValue != "null" {
+                        posterList.append(self.imageURL + item["poster_path"].stringValue)
+                    }
+                }
+                completionHandler(posterList)
+                
+            case .failure(let error) :
+                print(error)
+            }
+        }
+    }
+    
+    func getSimilarMovieList(completionHandler: @escaping([[String]]) -> Void ) {
+        var posterList: [[String]] = []
+        
+        MovieAPIManager.shared.getSimilarMovie(movieID: movieList[0].1) { value in
+            posterList.append(value)
+            
+            MovieAPIManager.shared.getSimilarMovie(movieID: self.movieList[1].1) { value in
+                posterList.append(value)
+                
+                MovieAPIManager.shared.getSimilarMovie(movieID: self.movieList[2].1) { value in
+                    posterList.append(value)
+                    
+                    MovieAPIManager.shared.getSimilarMovie(movieID: self.movieList[3].1) { value in
+                        posterList.append(value)
+                        
+                        MovieAPIManager.shared.getSimilarMovie(movieID: self.movieList[4].1) { value in
+                            posterList.append(value)
+                            
+                            completionHandler(posterList)
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    
 }

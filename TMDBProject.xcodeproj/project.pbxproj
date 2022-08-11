@@ -154,6 +154,14 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		A2A5586528A555A0000E6F0A /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				A2C27A1228A2A7E60016E150 /* RecommendationTableViewCell.swift */,
+			);
+			path = Recommend;
+			sourceTree = "<group>";
+		};
 		A2C27A0928A2A45A0016E150 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,7 +169,6 @@
 				A2C27A0C28A2A5EC0016E150 /* CardView.swift */,
 				A2C27A0E28A2A71F0016E150 /* CardCollectionViewCell.swift */,
 				A2C27A0F28A2A71F0016E150 /* CardCollectionViewCell.xib */,
-				A2C27A1228A2A7E60016E150 /* RecommendationTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -192,6 +199,7 @@
 				A2C27A0928A2A45A0016E150 /* View */,
 				A28CCF53289E90A40001584E /* Storyboard */,
 				A28CCF4A289E8ADC0001584E /* Main */,
+				A2A5586528A555A0000E6F0A /* Recommend */,
 				A28CCF4B289E8AE40001584E /* Movie */,
 				A28CCF4F289E8B7A0001584E /* MovieDetail */,
 				A28CCF52289E8B9A0001584E /* Drama */,
