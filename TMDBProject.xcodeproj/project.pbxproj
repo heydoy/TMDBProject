@@ -11,6 +11,8 @@
 		A235312C289BC1130067F2F2 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = A235312B289BC1130067F2F2 /* Tabman */; };
 		A28CCF4E289E8AFC0001584E /* TabPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28CCF4D289E8AFC0001584E /* TabPageCollectionViewCell.swift */; };
 		A28CCF57289EB8E10001584E /* CircularCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28CCF56289EB8E10001584E /* CircularCollectionViewLayout.swift */; };
+		A2A5586828A566EC000E6F0A /* TheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5586728A566EC000E6F0A /* TheaterViewController.swift */; };
+		A2A5586A28A56D92000E6F0A /* TheaterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5586928A56D92000E6F0A /* TheaterModel.swift */; };
 		A2C27A0828A2A3C70016E150 /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C27A0728A2A3C70016E150 /* RecommendationViewController.swift */; };
 		A2C27A0B28A2A4970016E150 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C27A0A28A2A4970016E150 /* CardView.xib */; };
 		A2C27A0D28A2A5EC0016E150 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C27A0C28A2A5EC0016E150 /* CardView.swift */; };
@@ -46,6 +48,8 @@
 		A20CCA68289D50AB00AF8113 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A28CCF4D289E8AFC0001584E /* TabPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabPageCollectionViewCell.swift; path = "../../../TMDBProject 2/UI/Movie/TabPageCollectionViewCell.swift"; sourceTree = "<group>"; };
 		A28CCF56289EB8E10001584E /* CircularCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularCollectionViewLayout.swift; sourceTree = "<group>"; };
+		A2A5586728A566EC000E6F0A /* TheaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterViewController.swift; sourceTree = "<group>"; };
+		A2A5586928A56D92000E6F0A /* TheaterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterModel.swift; sourceTree = "<group>"; };
 		A2C27A0728A2A3C70016E150 /* RecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
 		A2C27A0A28A2A4970016E150 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		A2C27A0C28A2A5EC0016E150 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -95,7 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				A2CA112D289C405D004A3897 /* MainViewController.swift */,
-				A2C27A0728A2A3C70016E150 /* RecommendationViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -157,9 +160,19 @@
 		A2A5586528A555A0000E6F0A /* Recommend */ = {
 			isa = PBXGroup;
 			children = (
+				A2C27A0728A2A3C70016E150 /* RecommendationViewController.swift */,
 				A2C27A1228A2A7E60016E150 /* RecommendationTableViewCell.swift */,
 			);
 			path = Recommend;
+			sourceTree = "<group>";
+		};
+		A2A5586628A566D9000E6F0A /* Theater */ = {
+			isa = PBXGroup;
+			children = (
+				A2A5586728A566EC000E6F0A /* TheaterViewController.swift */,
+				A2A5586928A56D92000E6F0A /* TheaterModel.swift */,
+			);
+			path = Theater;
 			sourceTree = "<group>";
 		};
 		A2C27A0928A2A45A0016E150 /* View */ = {
@@ -199,6 +212,7 @@
 				A2C27A0928A2A45A0016E150 /* View */,
 				A28CCF53289E90A40001584E /* Storyboard */,
 				A28CCF4A289E8ADC0001584E /* Main */,
+				A2A5586628A566D9000E6F0A /* Theater */,
 				A2A5586528A555A0000E6F0A /* Recommend */,
 				A28CCF4B289E8AE40001584E /* Movie */,
 				A28CCF4F289E8B7A0001584E /* MovieDetail */,
@@ -336,10 +350,12 @@
 				A2C27A1328A2A7E60016E150 /* RecommendationTableViewCell.swift in Sources */,
 				A2CA1135289C40A1004A3897 /* MovieViewController.swift in Sources */,
 				A2F2E4A0289CECE1002DB67E /* MovieAPIManager.swift in Sources */,
+				A2A5586A28A56D92000E6F0A /* TheaterModel.swift in Sources */,
 				A2C27A0D28A2A5EC0016E150 /* CardView.swift in Sources */,
 				A2C27A1028A2A71F0016E150 /* CardCollectionViewCell.swift in Sources */,
 				A2CA113D289C40B0004A3897 /* MovieCastTableViewCell.swift in Sources */,
 				A2E6E1AC2899F6C800844770 /* SceneDelegate.swift in Sources */,
+				A2A5586828A566EC000E6F0A /* TheaterViewController.swift in Sources */,
 				A2CA1131289C4070004A3897 /* PersonViewController.swift in Sources */,
 				A2CA1143289C931C004A3897 /* EmptyCollectionViewCell.swift in Sources */,
 				A2CA1132289C4070004A3897 /* DramaViewController.swift in Sources */,

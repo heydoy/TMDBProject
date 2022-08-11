@@ -392,7 +392,7 @@
         <!--내 근처 영화관-->
         <scene sceneID="exQ-5q-Ll3">
             <objects>
-                <viewController id="8w7-R2-ZNL" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TheaterViewController" id="8w7-R2-ZNL" customClass="TheaterViewController" customModule="TMDBProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sZ8-6D-ekE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -411,6 +411,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="내 근처 영화관" id="88z-3n-LT2"/>
+                    <connections>
+                        <outlet property="mapView" destination="0qR-HU-Fte" id="0vu-mY-g5B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xfc-eJ-xVi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
