@@ -11,6 +11,11 @@
 		A235312C289BC1130067F2F2 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = A235312B289BC1130067F2F2 /* Tabman */; };
 		A28CCF4E289E8AFC0001584E /* TabPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28CCF4D289E8AFC0001584E /* TabPageCollectionViewCell.swift */; };
 		A28CCF57289EB8E10001584E /* CircularCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28CCF56289EB8E10001584E /* CircularCollectionViewLayout.swift */; };
+		A29DE88A28AE3E5D005BF8F0 /* WalkThrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A29DE88928AE3E5D005BF8F0 /* WalkThrough.storyboard */; };
+		A29DE88C28AE3EA1005BF8F0 /* WalkThroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29DE88B28AE3EA1005BF8F0 /* WalkThroughPageViewController.swift */; };
+		A29DE88E28AE3EF7005BF8F0 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29DE88D28AE3EF7005BF8F0 /* FirstViewController.swift */; };
+		A29DE89028AE3F23005BF8F0 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29DE88F28AE3F23005BF8F0 /* SecondViewController.swift */; };
+		A29DE89228AE3F41005BF8F0 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29DE89128AE3F41005BF8F0 /* ThirdViewController.swift */; };
 		A2A5586828A566EC000E6F0A /* TheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5586728A566EC000E6F0A /* TheaterViewController.swift */; };
 		A2A5586A28A56D92000E6F0A /* TheaterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5586928A56D92000E6F0A /* TheaterModel.swift */; };
 		A2C27A0828A2A3C70016E150 /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C27A0728A2A3C70016E150 /* RecommendationViewController.swift */; };
@@ -48,6 +53,11 @@
 		A20CCA68289D50AB00AF8113 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A28CCF4D289E8AFC0001584E /* TabPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabPageCollectionViewCell.swift; path = "../../../TMDBProject 2/UI/Movie/TabPageCollectionViewCell.swift"; sourceTree = "<group>"; };
 		A28CCF56289EB8E10001584E /* CircularCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularCollectionViewLayout.swift; sourceTree = "<group>"; };
+		A29DE88928AE3E5D005BF8F0 /* WalkThrough.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WalkThrough.storyboard; sourceTree = "<group>"; };
+		A29DE88B28AE3EA1005BF8F0 /* WalkThroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughPageViewController.swift; sourceTree = "<group>"; };
+		A29DE88D28AE3EF7005BF8F0 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		A29DE88F28AE3F23005BF8F0 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		A29DE89128AE3F41005BF8F0 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		A2A5586728A566EC000E6F0A /* TheaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterViewController.swift; sourceTree = "<group>"; };
 		A2A5586928A56D92000E6F0A /* TheaterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterModel.swift; sourceTree = "<group>"; };
 		A2C27A0728A2A3C70016E150 /* RecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
@@ -153,8 +163,20 @@
 			isa = PBXGroup;
 			children = (
 				A2CA112B289C402A004A3897 /* Main.storyboard */,
+				A29DE88928AE3E5D005BF8F0 /* WalkThrough.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		A29DE88828AE3E45005BF8F0 /* WalkThrough */ = {
+			isa = PBXGroup;
+			children = (
+				A29DE88B28AE3EA1005BF8F0 /* WalkThroughPageViewController.swift */,
+				A29DE88D28AE3EF7005BF8F0 /* FirstViewController.swift */,
+				A29DE88F28AE3F23005BF8F0 /* SecondViewController.swift */,
+				A29DE89128AE3F41005BF8F0 /* ThirdViewController.swift */,
+			);
+			path = WalkThrough;
 			sourceTree = "<group>";
 		};
 		A2A5586528A555A0000E6F0A /* Recommend */ = {
@@ -211,6 +233,7 @@
 				A2F2E49E289CEC8D002DB67E /* APIManager */,
 				A2C27A0928A2A45A0016E150 /* View */,
 				A28CCF53289E90A40001584E /* Storyboard */,
+				A29DE88828AE3E45005BF8F0 /* WalkThrough */,
 				A28CCF4A289E8ADC0001584E /* Main */,
 				A2A5586628A566D9000E6F0A /* Theater */,
 				A2A5586528A555A0000E6F0A /* Recommend */,
@@ -330,6 +353,7 @@
 				A2C27A0B28A2A4970016E150 /* CardView.xib in Resources */,
 				A2E6E1B62899F6C900844770 /* LaunchScreen.storyboard in Resources */,
 				A2E6E1B32899F6C900844770 /* Assets.xcassets in Resources */,
+				A29DE88A28AE3E5D005BF8F0 /* WalkThrough.storyboard in Resources */,
 				A2C27A1128A2A71F0016E150 /* CardCollectionViewCell.xib in Resources */,
 				A2CA1144289C931C004A3897 /* EmptyCollectionViewCell.xib in Resources */,
 			);
@@ -344,9 +368,11 @@
 			files = (
 				A2CA113E289C40B0004A3897 /* MovieOverviewTableViewCell.swift in Sources */,
 				A2E6E1CA2899F9CE00844770 /* Constants.swift in Sources */,
+				A29DE88C28AE3EA1005BF8F0 /* WalkThroughPageViewController.swift in Sources */,
 				A2E6E1C42899F88B00844770 /* Keys.swift in Sources */,
 				A2C27A0828A2A3C70016E150 /* RecommendationViewController.swift in Sources */,
 				A2E6E1AA2899F6C800844770 /* AppDelegate.swift in Sources */,
+				A29DE89028AE3F23005BF8F0 /* SecondViewController.swift in Sources */,
 				A2C27A1328A2A7E60016E150 /* RecommendationTableViewCell.swift in Sources */,
 				A2CA1135289C40A1004A3897 /* MovieViewController.swift in Sources */,
 				A2F2E4A0289CECE1002DB67E /* MovieAPIManager.swift in Sources */,
@@ -359,8 +385,10 @@
 				A2CA1131289C4070004A3897 /* PersonViewController.swift in Sources */,
 				A2CA1143289C931C004A3897 /* EmptyCollectionViewCell.swift in Sources */,
 				A2CA1132289C4070004A3897 /* DramaViewController.swift in Sources */,
+				A29DE89228AE3F41005BF8F0 /* ThirdViewController.swift in Sources */,
 				A2F2E4A2289CF552002DB67E /* MovieAPIModel.swift in Sources */,
 				A2CA113C289C40B0004A3897 /* MovieDetailViewController.swift in Sources */,
+				A29DE88E28AE3EF7005BF8F0 /* FirstViewController.swift in Sources */,
 				A20CCA69289D50AB00AF8113 /* WebViewController.swift in Sources */,
 				A28CCF4E289E8AFC0001584E /* TabPageCollectionViewCell.swift in Sources */,
 				A28CCF57289EB8E10001584E /* CircularCollectionViewLayout.swift in Sources */,
