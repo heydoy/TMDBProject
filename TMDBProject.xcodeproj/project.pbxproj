@@ -16,6 +16,8 @@
 		A29DE88E28AE3EF7005BF8F0 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29DE88D28AE3EF7005BF8F0 /* FirstViewController.swift */; };
 		A29DE89028AE3F23005BF8F0 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29DE88F28AE3F23005BF8F0 /* SecondViewController.swift */; };
 		A29DE89228AE3F41005BF8F0 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29DE89128AE3F41005BF8F0 /* ThirdViewController.swift */; };
+		A29DE8B428AE426F005BF8F0 /* DeeFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A29DE8B228AE4249005BF8F0 /* DeeFramework.framework */; };
+		A29DE8B528AE426F005BF8F0 /* DeeFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A29DE8B228AE4249005BF8F0 /* DeeFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A2A5586828A566EC000E6F0A /* TheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5586728A566EC000E6F0A /* TheaterViewController.swift */; };
 		A2A5586A28A56D92000E6F0A /* TheaterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5586928A56D92000E6F0A /* TheaterModel.swift */; };
 		A2C27A0828A2A3C70016E150 /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C27A0728A2A3C70016E150 /* RecommendationViewController.swift */; };
@@ -49,6 +51,30 @@
 		A2F2E4A2289CF552002DB67E /* MovieAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F2E4A1289CF552002DB67E /* MovieAPIModel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A29DE8B128AE4249005BF8F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A29DE8AD28AE4249005BF8F0 /* DeeFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A29DE89D28AE4066005BF8F0;
+			remoteInfo = DeeFramework;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A29DE8B628AE426F005BF8F0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A29DE8B528AE426F005BF8F0 /* DeeFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		A20CCA68289D50AB00AF8113 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A28CCF4D289E8AFC0001584E /* TabPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabPageCollectionViewCell.swift; path = "../../../TMDBProject 2/UI/Movie/TabPageCollectionViewCell.swift"; sourceTree = "<group>"; };
@@ -58,6 +84,7 @@
 		A29DE88D28AE3EF7005BF8F0 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		A29DE88F28AE3F23005BF8F0 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		A29DE89128AE3F41005BF8F0 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		A29DE8AD28AE4249005BF8F0 /* DeeFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DeeFramework.xcodeproj; path = ../DeeFramework/DeeFramework.xcodeproj; sourceTree = "<group>"; };
 		A2A5586728A566EC000E6F0A /* TheaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterViewController.swift; sourceTree = "<group>"; };
 		A2A5586928A56D92000E6F0A /* TheaterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterModel.swift; sourceTree = "<group>"; };
 		A2C27A0728A2A3C70016E150 /* RecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +123,7 @@
 			files = (
 				A235312C289BC1130067F2F2 /* Tabman in Frameworks */,
 				A2D34895289B506800677714 /* JGProgressHUD in Frameworks */,
+				A29DE8B428AE426F005BF8F0 /* DeeFramework.framework in Frameworks */,
 				A2D3488F289B4BC000677714 /* Kingfisher in Frameworks */,
 				A2D34889289AD5D500677714 /* SwiftyJSON in Frameworks */,
 				A2D3488C289AD7B400677714 /* Alamofire in Frameworks */,
@@ -179,6 +207,21 @@
 			path = WalkThrough;
 			sourceTree = "<group>";
 		};
+		A29DE8AE28AE4249005BF8F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A29DE8B228AE4249005BF8F0 /* DeeFramework.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A29DE8B328AE426F005BF8F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A2A5586528A555A0000E6F0A /* Recommend */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,9 +254,11 @@
 		A2E6E19D2899F6C800844770 = {
 			isa = PBXGroup;
 			children = (
+				A29DE8AD28AE4249005BF8F0 /* DeeFramework.xcodeproj */,
 				A2E6E1BD2899F7D600844770 /* .gitignore */,
 				A2E6E1A82899F6C800844770 /* TMDBProject */,
 				A2E6E1A72899F6C800844770 /* Products */,
+				A29DE8B328AE426F005BF8F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -286,6 +331,7 @@
 				A2E6E1A22899F6C800844770 /* Sources */,
 				A2E6E1A32899F6C800844770 /* Frameworks */,
 				A2E6E1A42899F6C800844770 /* Resources */,
+				A29DE8B628AE426F005BF8F0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -336,12 +382,28 @@
 			);
 			productRefGroup = A2E6E1A72899F6C800844770 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A29DE8AE28AE4249005BF8F0 /* Products */;
+					ProjectRef = A29DE8AD28AE4249005BF8F0 /* DeeFramework.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A2E6E1A52899F6C800844770 /* TMDBProject */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A29DE8B228AE4249005BF8F0 /* DeeFramework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DeeFramework.framework;
+			remoteRef = A29DE8B128AE4249005BF8F0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A2E6E1A42899F6C800844770 /* Resources */ = {
